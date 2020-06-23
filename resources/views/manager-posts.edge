@@ -1,71 +1,56 @@
 @layout('main')
 @section('content')
 <div class="row mt-4 mb-4">
-  <div class="col-12">
+  <div class="col-12 col-md-8">
     <h2>Seja bem vindo!</h2>
     <p>Gerencie seus posts aqui!</p>
   </div>
+  <div class="col-12 col-md-4 text-right">
+    <a href="/create-post" class="btn btn-primary">Cadastrar Post</a>
+  </div>
 </div>
-
+<div class="row">
+  <div class="col-6">
+    @if(old('message'))
+      <div class="alert alert-{{old('type')}}" role="alert">
+        {{old('message')}}
+      </div>
+    @endif
+  </div>
+</div>
 <div class="row">
   <div class="col-12">
     <div class="table-responsive">
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Título</th>
-            <th scope="col">Autor</th>
-            <th scope="col">Status</th>
-            <th scope="col">Data</th>
-            <th scope="col">Ações</th>
+            <th>#</th>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Status</th>
+            <th>Data</th>
+            <th>Ações</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Meu Primeiro Post!</td>
-            <td>Luis Rodrigues</td>
-            <td>Ativo</td>
-            <td>22/06/20</td>
-            <td>
-              <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary">Ver</button>
-                <button type="button" class="btn btn-info">Editar</button>
-                <button type="button" class="btn btn-danger">Deletar</button>
-              </div>
-            </td>
-          </tr>
 
+          @each(post in posts)
+            
           <tr>
-            <th scope="row">1</th>
-            <td>Meu Primeiro Post!</td>
-            <td>Luis Rodrigues</td>
-            <td>Ativo</td>
-            <td>22/06/20</td>
+            <th>{{$loop.index +1}}</th>
+            <td>{{post.title}}</td>
+            <td>{{post.user.name}}</td>
+            <td>{{post.status == 1 ? 'Ativo' : 'Inativo'}}</td>
+            <td>{{post.created_at}}</td>
             <td>
               <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary">Ver</button>
-                <button type="button" class="btn btn-info">Editar</button>
+                <a href="/post/{{post.id}}" class="btn btn-primary">Ver</a>
+                <a href="/post/edit/{{post.id}}" class="btn btn-info">Editar</a>
                 <button type="button" class="btn btn-danger">Deletar</button>
               </div>
             </td>
           </tr>
-
-          <tr>
-            <th scope="row">1</th>
-            <td>Meu Primeiro Post!</td>
-            <td>Luis Rodrigues</td>
-            <td>Ativo</td>
-            <td>22/06/20</td>
-            <td>
-              <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary">Ver</button>
-                <button type="button" class="btn btn-info">Editar</button>
-                <button type="button" class="btn btn-danger">Deletar</button>
-              </div>
-            </td>
-          </tr>
+          @endeach
 
         </tbody>
       </table>

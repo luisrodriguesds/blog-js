@@ -6,15 +6,27 @@
       <div class="card bg-light mb-3">
         <div class="card-header">Blog do Luis</div>
         <div class="card-body">
+          @if(old('message'))
+            <div class="alert alert-{{old('type')}}" role="alert">
+              {{old('message')}}
+            </div>
+          @endif
           <h5 class="card-title">Login</h5>
-          <form>
+          <form method="POST" action="/login">
+            {{ csrfField() }}
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
-            </div>
+              <input type="email" class="form-control  {{hasErrorFor('email') ? 'is-invalid' : ''}}" name="email" id="email">
+              <div class="invalid-feedback">
+                {{getErrorFor('email')}}
+              </div>
+           </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" name="password" class="form-control" id="password">
+              <input type="password" name="password" class="form-control {{hasErrorFor('password') ? 'is-invalid' : ''}}" id="password">
+              <div class="invalid-feedback">
+                {{getErrorFor('password')}}
+              </div>
             </div>
             <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" id="remember">

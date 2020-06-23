@@ -16,8 +16,17 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('index')
+Route.get('/', 'PostController.index')
 Route.on('/post').render('post-single')
-Route.on('/login').render('login')
+
+Route.post('/login', 'UserController.login').validator(['UserLogin'])
+Route.get('/logout', 'UserController.logout')
+Route.on('/login').render('login').middleware('guest')
+
+Route.post('/register', 'UserController.store').validator(['UserStore'])
 Route.on('/register').render('register')
-Route.on('/manager-posts').render('manager-posts')
+
+Route.on('/create-post').render('create-post')
+Route.post('/posts/create', 'PostController.store')
+Route.get('/post/:id', 'PostController.show')
+Route.get('/manager-posts', 'PostController.manager_index').middleware('auth')

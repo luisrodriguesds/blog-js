@@ -1,0 +1,34 @@
+@layout('main')
+@section('content')
+<div class="row mt-4 mb-4">
+  <div class="col-12 col-md-8">
+    <h2>Seja bem vindo!</h2>
+    <p>Crie seu Post!</p>
+  </div>
+  <div class="col-12 col-md-4 text-right">
+    <a href="#" class="btn btn-primary">Cadastrar Post</a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-md-8 mx-auto">
+    <form method="post" action="/posts/create" enctype="multipart/form-data">
+      {{ csrfField() }}
+      <div class="form-group">
+        <label for="title">Título</label>
+        <input type="text" class="form-control" name="title" id="title">
+      </div>
+      <div class="form-group">
+        <label for="imag">Image</label>
+        <input type="text" name="image" placeholder="Insira a url da imagem" class="form-control" id="title">
+      </div>
+      <div class="form-group">
+        <label for="title">Conteúdo</label>
+        <textarea name="content" class="form-control"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Criar</button>
+    </form>
+  </div>
+</div>
+
+@endsection

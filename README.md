@@ -44,4 +44,10 @@ resources/view
 Rotas
   start/routes.js
 
+Explicar sobre layouts no adonis
+Fazer todas as páginas
+
+Explicar model e migration
+
+
 
