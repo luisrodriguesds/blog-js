@@ -2,22 +2,21 @@
   Simple Blog
 </h2>
 
-# 🚀 About
+## 🚀 About
 Simple application to teaching about conceptions from AdonisJS and little tools for init your journey into the programming world.
 
-# 🎨 Layout
+## 🎨 Layout
 <h4 align="center">
 
   <img alt="Update" title="Update" src=".github/exemplo-blog.gif" />
 
 </h4>
 
-# Techs
-- [AdonisJS][adonisjs]
-- [Bootstrap][bootstrap]
-- [NodeJS][nodejs]
+## 🔨 Techs
+- AdonisJS
+- Bootstrap
 
-# :information_source: How To Use
+## 📱 How To Use
 
 ```bash
 
