@@ -1,53 +1,56 @@
-# Adonis fullstack application
+<h2 align="center">
+  Simple Blog
+</h2>
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
+# 🚀 About
+Simple application to teaching about conceptions from AdonisJS and little tools for init your journey into the programming world.
 
-1. Bodyparser
-2. Session
-3. Authentication
-4. Web security middleware
-5. CORS
-6. Edge template engine
-7. Lucid ORM
-8. Migrations and seeds
+# 🎨 Layout
+<h4 align="center">
 
-## Setup
+  <img alt="Update" title="Update" src=".github/exemplo-blog.gif" />
 
-Use the adonis command to install the blueprint
+</h4>
+
+# Techs
+- [AdonisJS][adonisjs]
+- [Bootstrap][bootstrap]
+- [NodeJS][nodejs]
+
+# :information_source: How To Use
 
 ```bash
-adonis new yardstick
+
+# Clone this repository
+
+$ git clone https://github.com/luisrodriguesds/blog-js.git
+
+# Go into the repository
+
+$ cd blog
+
+# Install packages
+
+$ npm install
+
+# Configure .env with your database information
+
+$ gedit .env
+
+# Run the migrations
+
+$ adonis migration:run
+
+# Run start and enjoy
+
+$ adonis serve --dev
+
+# Enjoy!
+
 ```
 
-or manually clone the repo and then run `npm install`.
+After this, you can develop and contact my from see your contrib and add credits for you in this repository :smile: 
 
+---
 
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
-```
-
-### Passo a Passo
-
-Explicar MVC
-
-Banco de dados
-  npm i mysql
-  Dados do banco de dados
-
-resources/view
- view do adonis
-
-Rotas
-  start/routes.js
-
-Explicar sobre layouts no adonis
-Fazer todas as páginas
-
-Explicar model e migration
-
-
-
+Made with ♥ by Luis Rodrigues [Visit my LinkedIn!](https://www.linkedin.com/in/luis-rodrigues-064875174/) :rocket:

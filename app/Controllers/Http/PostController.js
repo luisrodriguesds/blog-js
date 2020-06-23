@@ -74,7 +74,6 @@ class PostController {
   async show ({ params, request, response, view }) {
     const id = params.id
     const post = await Post.query().where('id', id).with('user').first()
-    console.log(post.toJSON());
     return view.render('post-single', {post: post.toJSON()})
   }
 
